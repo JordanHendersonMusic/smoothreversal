@@ -1,7 +1,6 @@
 SmoothReversal : UGen {
-	*ar { |input, gain|
-		/* TODO */
-		^this.multiNew('audio', input, gain);
+	*ar { |bufnum, playbackRate, switchDirectionTrigger, threshold=0.0001|
+		^this.multiNew('audio', bufnum, BufRateScale.kr(bufnum) * playbackRate, switchDirectionTrigger, threshold=0.0001)
 	}
 	checkInputs {
 		/* TODO */

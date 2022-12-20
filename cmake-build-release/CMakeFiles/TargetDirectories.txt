@@ -1,0 +1,8 @@
+/home/jordan/.repo/supercolliderExtensions/smoothreversal/cmake-build-release/CMakeFiles/SmoothReversal_scsynth.dir
+/home/jordan/.repo/supercolliderExtensions/smoothreversal/cmake-build-release/CMakeFiles/SmoothReversal_supernova.dir
+/home/jordan/.repo/supercolliderExtensions/smoothreversal/cmake-build-release/CMakeFiles/edit_cache.dir
+/home/jordan/.repo/supercolliderExtensions/smoothreversal/cmake-build-release/CMakeFiles/rebuild_cache.dir
+/home/jordan/.repo/supercolliderExtensions/smoothreversal/cmake-build-release/CMakeFiles/list_install_components.dir
+/home/jordan/.repo/supercolliderExtensions/smoothreversal/cmake-build-release/CMakeFiles/install.dir
+/home/jordan/.repo/supercolliderExtensions/smoothreversal/cmake-build-release/CMakeFiles/install/local.dir
+/home/jordan/.repo/supercolliderExtensions/smoothreversal/cmake-build-release/CMakeFiles/install/strip.dir

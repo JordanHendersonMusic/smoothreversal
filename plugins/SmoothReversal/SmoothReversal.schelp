@@ -1,26 +1,62 @@
 class:: SmoothReversal
-summary:: A smooth way of instantly (ish) reversing a buffer
-related:: TODO
-categories:: UGens>TODO
+summary:: A smooth way to instantly(ish) reverse a buffer.
+related::
+categories:: UGens>Buffer
 
 description::
 
-A smooth way of instantly (ish) reversing a buffer
+A smooth way to instantly(ish) reverse a buffer.
+
+When receiving a trigger
+this Ugen will reverse the playback at the next sample where the difference between that and the following sample is less than the threshold.
+Conceptually, this only reverses the signal when the derivative is small enough to avoid a click.
 
 
 classmethods::
 
-method::ar, kr
+method::ar
 
-argument::TODO
+argument::bufnum
 
-argument::TODO
+A valid bufnum.
+
+argument::playbackRate
+
+Must be audio rate.
+The playback rate.
+Should be positive since the next argument will be responsible for reversing it.
+
+argument::switchDirectionTrigger
+
+Must be audio rate.
+
+When greater than 0.5, the direction of playback will be reversed.
+If this is greater than 0.5 for more than one sample you will suddenly get silence.
+Make sure triggers last exactly one sample.
+
+
+argument::threshold
+
+A number (in amplitude) that controls what is considered a small enough derivative. Try -15.dbamp.
+The smallest this value, the less delay between asking for a reverse and getting one, but the greater chance of a click.
 
 
 examples::
 
 code::
 
-{ SmoothReversal.ar(/* TODO */) }.play
+(
+s.waitForBoot {
+	~buffer = ~buffer ?? {Buffer.read(s, Platform.resourceDir +/+ "sounds/a11wlk01.wav")};
+	s.sync;
+
+	try {x.free}{};
+
+	x = {
+		var t =  Dust.ar(1) > 0.5;
+		[t, SmoothReversal.ar(~buffer, K2A.ar(BufRateScale.kr(~buffer)), t, -15.dbamp)]
+	}.play;
+}
+)
 
 ::
