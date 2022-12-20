@@ -1,6 +1,6 @@
 class:: SmoothReversal
 summary:: A smooth way to instantly(ish) reverse a buffer.
-related::
+related:: BufRd
 categories:: UGens>Buffer
 
 description::

@@ -1,0 +1,70 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-d2bcf93cd1c56552921c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "SmoothReversal",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "SmoothReversal_scsynth::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SmoothReversal_scsynth-Release-18b1a906b39338dcfe30.json",
+					"name" : "SmoothReversal_scsynth",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SmoothReversal_supernova::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SmoothReversal_supernova-Release-79a1688785e4bfff1660.json",
+					"name" : "SmoothReversal_supernova",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/jordan/.repo/supercolliderExtensions/smoothreversal/cmake-build-release",
+		"source" : "/home/jordan/.repo/supercolliderExtensions/smoothreversal"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
