@@ -11,6 +11,9 @@ set(project_name "SmoothReversal")
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake_modules ${CMAKE_MODULE_PATH})
 set(CMAKE_CXX_STANDARD 17)
 
+if(CMAKE_COMPILER_IS_GNUCXX)
+    add_compile_options(-Wall -Wextra -pedantic)
+endif(CMAKE_COMPILER_IS_GNUCXX)
 ####################################################################################################
 # load modules
 include(SuperColliderServerPlugin RESULT_VARIABLE server_plugin_found)

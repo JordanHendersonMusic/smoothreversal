@@ -68,11 +68,11 @@ float ScopedSndBuf::cubic_lerp(double phase, uint32_t channel) const {
 
 const std::optional<ScopedSndBufFactory>&
 ScopedSndBufManager::try_to_load_snd_buf_factory(uint32_t buf_num, World& world, uint32_t num_outputs, bool done) {
-	if (buf_factory and buf_factory->holds_buf_num(buf_num)) [[likely]]
+	if (buf_factory && buf_factory->holds_buf_num(buf_num)) [[likely]]
 		return buf_factory;
 
 	const auto valid_snd_buf_num = [&](uint32_t b) -> bool {
-		return 0 <= buf_num and buf_num < world.mNumSndBufs;
+		return 0 <= buf_num && buf_num < world.mNumSndBufs;
 	};
 
 	if (!valid_snd_buf_num(buf_num)) {
@@ -94,14 +94,14 @@ ScopedSndBufManager::try_to_load_snd_buf_factory(uint32_t buf_num, World& world,
 
 	// buffer wasn't loaded
 	if (maybe_buffer->data == nullptr) {
-		if (world.mVerbosity > -1 and !done and (previous_invalid_buffer != buf_num))
+		if (world.mVerbosity > -1 && !done && (previous_invalid_buffer != buf_num))
 			Print("Buffer UGen: no buffer data\n");
 		previous_invalid_buffer = buf_num;
 		return buf_factory = std::nullopt;
 	}
 
 	if (num_outputs != maybe_buffer->channels) {
-		if (world.mVerbosity > -1 and !done and (previous_invalid_buffer != buf_num))
+		if (world.mVerbosity > -1 && !done && (previous_invalid_buffer != buf_num))
 			Print("Buffer UGen channel mismatch: expected %i, yet buffer has %i channels\n", num_outputs,
 			      maybe_buffer->channels);
 		previous_invalid_buffer = buf_num;
