@@ -160,7 +160,7 @@ void SmoothReversal::next(int num_samples) {
 
 		// will change direction on the next sample
 		if (target_direction != direction) {
-			const bool at_end_or_beginning_of_buffer = phase >= (buf.frames() - 2) or phase < 1;
+			const bool at_end_or_beginning_of_buffer = phase >= (buf.frames() - 2) || phase < 1;
 			if (not at_end_or_beginning_of_buffer) {
 				const float delta_d = buf.no_lerp(phase + (target_direction ? -1 : 1), 0) - buf.no_lerp(phase, 0);
 				if (std::abs(delta_d) < threshold)
