@@ -53,8 +53,12 @@ s.waitForBoot {
 	try {x.free}{};
 
 	x = {
-		var t =  Dust.ar(1) > 0.5;
-		[t, SmoothReversal.ar(~buffer, K2A.ar(BufRateScale.kr(~buffer)), t, -15.dbamp)]
+		SmoothReversal.ar(
+			bufnum: ~buffer,
+			playbackRate: MouseX.kr(0, 2),
+			switchDirectionTrigger: Dust.ar(1) > 0.5,
+			threshold: -15.dbamp
+		)
 	}.play;
 }
 )
